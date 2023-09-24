@@ -1,25 +1,14 @@
 // export const dynamic = 'force-static';
 import ProductList from '@/components/Pages/ProductList';
-
-// import products from '../../../products.json';
 import { Product } from '@/@types';
 import Pagination from '@/components/Pagination';
 import { H1 } from '@/components/utils';
 import { getProducts } from '../../../sanity/utils';
+import { AKCIJA_QUERY } from '../../../sanity/groq-queries';
 
 const Akcije = async () => {
   const products: Product[] = await getProducts({
-    query: `*[_type == "product" && akcija == true]{
-    "id":id.current,
-    "tip": tip,
-    "name": name, 
-    "price": cena,
-    "detail": details,
-    "image": image.asset->url,
-    "novo": novo,
-    "akcija": akcija,
-    "title": title[][0]->name,
-    "link": link[][0]->slug,}`,
+    query: AKCIJA_QUERY,
   });
   return (
     <>

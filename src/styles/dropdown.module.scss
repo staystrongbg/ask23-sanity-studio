@@ -27,9 +27,9 @@
   visibility: hidden;
   transform-origin: top right;
   transition: all ease-out 0.2s;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  // -webkit-box-shadow: 0px 10px 13px -7px #000000,
+  //   5px 5px 15px 5px rgba(0, 0, 0, 0);
+  // box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 
   a {
     display: flex;
@@ -40,8 +40,8 @@
     align-items: center;
     font-size: 1rem;
     &:hover {
-      background-color: rgb(234, 88, 12);
       border-radius: 5px;
+      background-color: #8c3bd2;
       color: rgb(255, 255, 255);
     }
   }

@@ -13,7 +13,7 @@ const NonSwiperProizvod = ({ p }: { p: Product }) => {
   return (
     <>
       {p && (
-        <div className="flex flex-col hover:shadow-lg rounded-md border border-gray-200 ">
+        <div className="flex flex-col hover:shadow-lg rounded-md border bg-white border-gray-200 ">
           <div
             className={`h-[320px] lg:text-base text-xs bg-green-500  transition-all relative overflow-hidden flex flex-col justify-start `}
             style={{ animation: 'fadeIn 0.3s ease-out' }}
@@ -35,8 +35,8 @@ const NonSwiperProizvod = ({ p }: { p: Product }) => {
           </div>
           <div className="p-2 flex flex-col items-center justify-around ">
             <div className="flex mt-2 ">
-              <span className=" text-gray-500 py-1 px-2">{p.tip}</span>
-              <span className=" text-gray-500 py-1 px-2">{p.title}</span>
+              <span className=" text-gray-300 py-1 px-2">{p.tip}</span>
+              <span className=" text-gray-300 py-1 px-2">{p.title}</span>
             </div>
             <div className="h-[100px] flex items-center justify-center">
               <h3 className="title text-sm sm:text-base text-blue-700 whitespace-pre-wrap py-4 ">

@@ -32,11 +32,11 @@ const Navlinks = ({ className = '' }) => {
           </Link>
         )}
         <div
-          className={` ${styles.menu} flex items-center justify-center gap-0.5 relative  `}
+          className={` ${styles.menu} flex items-center justify-center gap-0.5 relative border-b-4 border-transparent `}
         >
           <Link
             href="/proizvodi"
-            className={`text-gray-900 tracking-wider select-none whitespace-nowrap z-30}`}
+            className={`text-gray-900 tracking-wider select-none whitespace-nowrap z-30 `}
           >
             производи
           </Link>

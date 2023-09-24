@@ -5,6 +5,7 @@ import ProductList from '@/components/Pages/ProductList';
 import Pagination from '@/components/Pagination';
 import { Metadata } from 'next';
 import { getProducts } from '../../../sanity/utils';
+import { ALL_PRODUCTS_QUERY } from '../../../sanity/groq-queries';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,18 +13,7 @@ export const metadata: Metadata = {
 };
 const SviProizvodi = async () => {
   const products: Product[] = await getProducts({
-    query: `*[_type == "product"]{
-    "id":id.current,
-    "tip": tip,
-    "name": name, 
-    "price": cena,
-    "detail": details,
-    "image": image.asset->url,
-    "novo": novo,
-    "akcija": akcija,
-    "title": title[][0]->name,
-    "link": link[][0]->slug,
-  }`,
+    query: ALL_PRODUCTS_QUERY,
   });
   return (
     <>

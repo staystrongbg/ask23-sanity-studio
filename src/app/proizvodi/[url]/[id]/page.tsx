@@ -1,9 +1,9 @@
 // export const dynamic = 'force-static';
-// import products from '../../../../../products.json';
 import { Product } from '@/@types';
 import SingleProduct from '@/components/Pages/SingleProduct';
 import { Metadata } from 'next';
 import { getProducts } from '../../../../../sanity/utils';
+import { signle_product_query } from '../../../../../sanity/groq-queries';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,22 +22,10 @@ const ProizvodPojedinacno = async ({
 }: {
   params: { id: string; url: string };
 }) => {
-  const products = await getProducts({
-    query: `*[_type == "product" && defined(link[][0]->slug == "${params.url}") && defined(id.current == "${params.id}" )]{
-    "id":id.current,
-    "tip": tip,
-    "name": name,
-    "price": cena,
-    "detail": details,  
-    "image": image.asset->url,
-    "novo": novo,
-    "akcija": akcija,
-    "title": title[][0]->name,
-    "link": link[][0]->slug,
-    
-    }`,
+  const products: Product[] = await getProducts({
+    query: signle_product_query(params),
   });
-  return <SingleProduct products={products as Product[]} />;
+  return <SingleProduct products={products} />;
 };
 
 export default ProizvodPojedinacno;

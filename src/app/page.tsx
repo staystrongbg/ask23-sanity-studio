@@ -1,24 +1,13 @@
-import Image from 'next/image';
+// export const dynamic = 'force-static';
 import Paw from '@/components/Helpers/Paw';
 import { Brendovi, GoogleMap, Kategorije, Noviteti } from '@/components';
 import { getProducts } from '../../sanity/utils';
-// import products from '../../products.json';
+import { ALL_PRODUCTS_QUERY } from '../../sanity/groq-queries';
 export default async function Home() {
   const products = await getProducts({
-    query: `*[_type == "product"]{
-    "id":id.current,
-    "tip": tip,
-    "name": name, 
-    "price": cena,
-    "detail": details,
-    "image": image.asset->url,
-    "novo": novo,
-    "akcija": akcija,
-    "title": title[][0]->name,
-    "link": link[][0]->slug,
-  }`,
+    query: ALL_PRODUCTS_QUERY,
   });
-  console.log('products', products);
+
   return (
     <>
       <div

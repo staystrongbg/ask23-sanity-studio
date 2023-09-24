@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Product } from '@/@types';
 import { getProducts } from '../../../sanity/utils';
 import { useSearchContext } from '@/context/searchContext';
+import { ALL_PRODUCTS_QUERY } from '../../../sanity/groq-queries';
 
 export const Search = () => {
   const {
@@ -60,18 +61,7 @@ export const Search = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const res = await getProducts({
-        query: `*[_type == "product"]{
-    "id":id.current,
-    "tip": tip,
-    "name": name, 
-    "price": cena,
-    "detail": details,
-    "image": image.asset->url,
-    "novo": novo,
-    "akcija": akcija,
-    "title": title[][0]->name,
-    "link": link[][0]->slug,
-  }`,
+        query: ALL_PRODUCTS_QUERY,
       });
       setProducts(res);
     };

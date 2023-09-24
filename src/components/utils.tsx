@@ -45,10 +45,10 @@ export const ICON_STYLE_FOOTER = 'bg-gray-700 text-slate-50  rounded-full p-2';
 
 //filteri
 export const UL_LIST_STYLE =
-  'flex items-center justify-start w-full mb-4 cursor-pointer sm:text-base text-sm font-bold   text-gray-600 whitespace-nowrap';
+  'flex items-center justify-between w-full rounded-md px-4 py-2  cursor-pointer sm:text-base text-sm  text-gray-600 whitespace-nowrap';
 
 export const LI_LIST_STYLE =
-  'list-none font-bold cursor-pointer text-gray-600  mb-3 tracking-wide whitespace-nowrap  ml-4 flex justify-between active:text-orange-400  ';
+  'list-none cursor-pointer text-gray-600  my-3 tracking-wide whitespace-nowrap  ml-4 flex justify-between active:text-orange-400  ';
 
 //filteri kraj
 

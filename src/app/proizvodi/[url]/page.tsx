@@ -1,10 +1,9 @@
 // export const dynamic = 'force-static';
-// import products from '../../../../products.json';
-
 import KategorijaProizvoda from '@/components/Pages/KategorijaProizvoda';
 import { Product } from '@/@types';
 import { Metadata } from 'next';
 import { getProducts } from '../../../../sanity/utils';
+import { url_products_query } from '../../../../sanity/groq-queries';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,19 +18,7 @@ export async function generateStaticParams() {
 }
 const Kategorija = async ({ params }: { params: { url: string } }) => {
   const products: Product[] = await getProducts({
-    query: `*[_type == "product" && link[][0]->slug == "${params.url}"]{
-    "id":id.current,
-    "tip": tip,
-    "name": name,
-    "price": cena,
-    "detail": details,  
-    "image": image.asset->url,
-    "novo": novo,
-    "akcija": akcija,
-    "title": title[][0]->name,
-    "link": link[][0]->slug,
-    
-    }`,
+    query: url_products_query(params.url),
   });
   return <KategorijaProizvoda products={products} />;
 };

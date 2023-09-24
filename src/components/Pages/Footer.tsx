@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-blue-900/80 w-full relative items-start justify-between  sm:text-sm md:text-base lg:text-lg overflow-hidden text-red-50 pt-5">
+    <footer className="bg-[#545CC4] w-full relative items-start justify-between  sm:text-sm md:text-base lg:text-lg overflow-hidden text-red-50 pt-5">
       {/* {korisnickiServis.servis && (
         <ClickAwayListener
           onClickAway={() => setKorisnickiServis({ servis: '', propratni: '' })}

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { links } from '../utils';
 const Links = ({ text_color }: { text_color: string }) => {
   return (
-    <div className={` gap-4 xl:gap-6 flex z-30 `}>
+    <div className={` gap-4 xl:gap-6 flex z-30 items-center `}>
       {links.map((link, i) => (
         <Link
           key={i}

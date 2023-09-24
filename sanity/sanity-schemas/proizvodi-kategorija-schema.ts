@@ -1,6 +1,6 @@
-export const kategorije = {
-  name: 'category',
-  title: 'Kategorije',
+export const proizvodKategorija = {
+  name: 'product-type',
+  title: 'Tip Proizvoda',
   type: 'document',
   fields: [
     {

@@ -46,8 +46,8 @@ const SwiperProizvod = ({
           </div>
           <div className="p-2 flex flex-col items-center justify-around ">
             <div className="flex mt-2 ">
-              <span className=" text-gray-500 py-1 px-2">{proizvod.tip}</span>
-              <span className=" text-gray-500 py-1 px-2">{proizvod.title}</span>
+              <span className=" text-gray-300 py-1 px-2">{proizvod.tip}</span>
+              <span className=" text-gray-300 py-1 px-2">{proizvod.title}</span>
             </div>
             <div className="h-[100px] flex items-center justify-center">
               <h3 className="title text-xs sm:text-sm text-blue-700 whitespace-pre-wrap py-4 ">

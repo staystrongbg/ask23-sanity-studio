@@ -32,7 +32,7 @@ const Kategorije = () => {
       title: 'рибице',
       link: 'ribice',
       textStyle: 'text-blue-900',
-      background: 'bg-blue-100',
+      background: 'bg-blue-200',
     },
     {
       image: '/vectors/zec.svg',

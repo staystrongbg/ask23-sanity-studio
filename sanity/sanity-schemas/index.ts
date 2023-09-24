@@ -1,4 +1,5 @@
-import { proizvod } from './product-schema';
-import { kategorije } from './category-schema';
+import { proizvod } from './proizvodi-schema';
+import { zivotinja } from './zivotinja-schema';
 import { slugs } from './slug-schema';
-export const schemaTypes = [proizvod, kategorije, slugs];
+import { proizvodKategorija } from './proizvodi-kategorija-schema';
+export const schemaTypes = [proizvod, zivotinja, slugs, proizvodKategorija];

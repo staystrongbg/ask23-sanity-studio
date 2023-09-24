@@ -1,8 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 import { useProductContext } from '../../context/productContext';
-// import products from '../../../products.json';
-
 import { FaChevronRight } from 'react-icons/fa';
 import { CHEVRON_ROTATING_STYLE, LI_LIST_STYLE, UL_LIST_STYLE } from '../utils';
 import { Product } from '../../@types';
@@ -54,7 +52,7 @@ export const FilterKategorije = ({
     setPagination({ ...pagination, page: 1 });
   };
   return (
-    <div className="bg-white p-2 shadow-md rounded-sm mb-4">
+    <div className="bg-white p-2 mb-4 border border-gray-200 rounded-md">
       <ul>
         <span
           className={UL_LIST_STYLE}
@@ -125,7 +123,7 @@ export const FilterTip = ({
     );
   };
   return (
-    <div className="bg-white p-2 shadow-md rounded-sm mb-4 ">
+    <div className="bg-white p-2 mb-4 border border-gray-200 rounded-md">
       <ul>
         <span className={UL_LIST_STYLE} onClick={() => setShowTip(!showTip)}>
           тип производа
@@ -162,7 +160,7 @@ export const FilterSort = () => {
   const { setItems, items, showfilters, setShowFilters } = useProductContext();
 
   return (
-    <div className="bg-white p-2 shadow-md mb-4 rounded-sm ">
+    <div className="bg-white p-2 mb-4 border border-gray-200 rounded-md">
       <ul>
         <span
           className={UL_LIST_STYLE}
