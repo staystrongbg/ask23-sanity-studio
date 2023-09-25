@@ -9,7 +9,7 @@ import { Product } from '@/@types';
 const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
   const pathname = usePathname();
   const { url } = useParams();
-
+  console.log('url', url);
   const {
     setItems,
     items,
@@ -31,6 +31,7 @@ const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
   useEffect(() => {
     setVrstaZivotinje(page ?? []);
   }, [page]);
+  console.log('page', page);
   return (
     <>
       {page && vrstaZivotinje && items && page[0] ? (

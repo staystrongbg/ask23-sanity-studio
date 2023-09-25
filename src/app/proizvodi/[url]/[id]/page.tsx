@@ -12,9 +12,8 @@ export const metadata: Metadata = {
 export async function generateStaticParams() {
   const products = await getProducts({
     query:
-      '*[_type == "product" && defined(link[][0]->slug) && defined(id.current)]{ "id": id.current, "link": link[][0]->slug}',
+      '*[_type == "product" && defined(link[][0]->slug) && defined(id.current)]{ "id": id.current, "url": link[][0]->slug}',
   });
-
   return products;
 }
 const ProizvodPojedinacno = async ({
@@ -23,8 +22,12 @@ const ProizvodPojedinacno = async ({
   params: { id: string; url: string };
 }) => {
   const products: Product[] = await getProducts({
-    query: signle_product_query(params),
+    query: signle_product_query({
+      id: params.id,
+      url: params.url,
+    }),
   });
+  console.log('params', params);
   return <SingleProduct products={products} />;
 };
 

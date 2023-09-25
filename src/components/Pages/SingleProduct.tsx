@@ -16,7 +16,7 @@ function SingleProduct({ products }: { products: Product[] }) {
     useProductContext();
 
   const { id } = useParams();
-
+  console.log('id', id);
   useEffect(() => {
     setProduct(
       !similarProduct
@@ -24,6 +24,7 @@ function SingleProduct({ products }: { products: Product[] }) {
         : null
     );
   }, [id]);
+  console.log('products', products);
   return (
     <>
       {product ? (

@@ -14,7 +14,6 @@ export const proizvod = {
       type: 'slug',
       title: 'ID',
       description: 'ID proizvoda max 30 karaktera',
-      validation: (Rule: { max: (arg0: number) => any }) => Rule.max(30),
       options: {
         source: 'name',
         maxLength: 30,
