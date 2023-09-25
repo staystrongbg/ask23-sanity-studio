@@ -17,7 +17,7 @@ export async function generateStaticParams() {
   return path;
 }
 const Kategorija = async ({ params }: { params: { url: string } }) => {
-  const products: Product[] = await getProducts({
+  const products = await getProducts({
     query: url_products_query(params.url),
   });
   return <KategorijaProizvoda products={products} />;

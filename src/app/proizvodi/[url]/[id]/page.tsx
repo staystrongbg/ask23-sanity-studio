@@ -21,7 +21,7 @@ const ProizvodPojedinacno = async ({
 }: {
   params: { id: string; url: string };
 }) => {
-  const products: Product[] = await getProducts({
+  const products = await getProducts({
     query: signle_product_query({
       id: params.id,
       url: params.url,

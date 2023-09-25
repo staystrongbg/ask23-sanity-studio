@@ -3,6 +3,7 @@ import Paw from '@/components/Helpers/Paw';
 import { Brendovi, GoogleMap, Kategorije, Noviteti } from '@/components';
 import { getProducts } from '../../sanity/utils';
 import { ALL_PRODUCTS_QUERY } from '../../sanity/groq-queries';
+import { Product } from '@/@types';
 export default async function Home() {
   const products = await getProducts({
     query: ALL_PRODUCTS_QUERY,
