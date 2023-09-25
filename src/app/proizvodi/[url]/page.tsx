@@ -20,8 +20,6 @@ const Kategorija = async ({ params }: { params: { url: string } }) => {
   const products: Product[] = await getProducts({
     query: url_products_query(params.url),
   });
-  console.log('products', products);
-  console.log('params', params);
   return <KategorijaProizvoda products={products} />;
 };
 

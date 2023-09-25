@@ -7,9 +7,7 @@ import { Button2, FilterSort, FilterTip, NonSwiperProizvod } from '..';
 import Link from 'next/link';
 import { Product } from '@/@types';
 const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
-  const pathname = usePathname();
   const { url } = useParams();
-  console.log('url', url);
   const {
     setItems,
     items,
@@ -19,10 +17,10 @@ const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
     setPagination,
   } = useProductContext();
 
-  const [page, setPage] = useState<Product[] | null>(null);
-  useEffect(() => {
-    setPage(products.filter((prod) => prod.link === url) as Product[]);
-  }, [url]);
+  const [page, setPage] = useState<Product[] | []>(products);
+  // useEffect(() => {
+  //   setPage(products.filter((prod) => prod.link === url) as Product[]);
+  // }, [url]);
 
   useEffect(() => {
     setItems(vrstaZivotinje);
@@ -31,10 +29,9 @@ const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
   useEffect(() => {
     setVrstaZivotinje(page ?? []);
   }, [page]);
-  console.log('page', page);
   return (
     <>
-      {page && vrstaZivotinje && items && page[0] ? (
+      {page ? (
         <>
           <div className={`wrapper w-full `}>
             <section className="sm:px-5 px-1  ">
@@ -43,7 +40,7 @@ const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
                 <ProductsListWrapper>
                   <div className="sm:w-1/6 w-4/5 flex flex-col px-2">
                     <FilterSort />
-                    <FilterTip numberOfProductsByType={page} />
+                    {page && <FilterTip numberOfProductsByType={page} />}
                   </div>
                   <GridContainer>
                     {items &&
