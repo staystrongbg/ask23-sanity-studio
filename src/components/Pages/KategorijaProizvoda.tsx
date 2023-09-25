@@ -23,12 +23,12 @@ const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
   // }, [url]);
 
   useEffect(() => {
-    setItems(vrstaZivotinje);
-  }, [vrstaZivotinje]);
-
-  useEffect(() => {
-    setVrstaZivotinje(page ?? []);
+    setItems(page);
   }, [page]);
+
+  // useEffect(() => {
+  //   setVrstaZivotinje(page ?? []);
+  // }, [page]);
   return (
     <>
       {page ? (
