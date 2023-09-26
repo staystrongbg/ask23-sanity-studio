@@ -20,7 +20,7 @@ export default function RootLayout({
     <ProductContextProvider>
       <SearchContextProvider>
         <CartContextProvider>
-          <html lang="sr">
+          <html lang="sr" className={alegreya.className}>
             <body>
               <div className="flex flex-col ">
                 <Topbar />
