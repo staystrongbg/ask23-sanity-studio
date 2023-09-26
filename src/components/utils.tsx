@@ -1,6 +1,6 @@
 //custom styled components! TEST TEST TEST :)
 //kategorija stilovi
-
+import { rubik } from '@/app/fonts';
 type ComponentProps = {
   children: React.ReactNode;
   className?: string;
@@ -22,7 +22,7 @@ export const CategoryCard = ({ children, className }: ComponentProps) => {
 export const CategoryTitle = ({ className, children }: ComponentProps) => {
   return (
     <h3
-      className={`${className} xl:text-4xl break-all text-2xl tracking-normal  uppercase head`}
+      className={`${className} xl:text-4xl break-all text-2xl tracking-normal ${rubik.className} uppercase head`}
     >
       {children}
     </h3>

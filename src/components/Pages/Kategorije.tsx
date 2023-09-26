@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { rubik } from '@/app/fonts';
 import { CategoryCard, CategoryTitle, CategoryImgContainer } from '../utils';
 
 const Kategorije = () => {
@@ -48,7 +47,7 @@ const Kategorije = () => {
       {categoryData.map((i, idx) => (
         <Link key={idx} href={`/proizvodi/${i.link}`}>
           <CategoryCard className={`${i.background} `}>
-            <CategoryTitle className={`${i.textStyle} ${rubik.className} `}>
+            <CategoryTitle className={`${i.textStyle}  `}>
               {i.title}
             </CategoryTitle>
             <CategoryImgContainer className="w-1/2  h-1/2 flex items-center justify-center relative">

@@ -4,7 +4,7 @@ import { ProductContextProvider } from '../context/productContext';
 import { SearchContextProvider } from '../context/searchContext';
 import { CartContextProvider } from '../context/cartContext';
 import { Breadcrumbs, Footer, Topbar, Topnav } from '@/components';
-import { alegreya } from './fonts';
+import { alegreya, rubik } from './fonts';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
