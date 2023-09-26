@@ -21,7 +21,7 @@ export default function RootLayout({
       <SearchContextProvider>
         <CartContextProvider>
           <html lang="sr">
-            <body className={alegreya.className}>
+            <body>
               <div className="flex flex-col ">
                 <Topbar />
                 <Topnav />
