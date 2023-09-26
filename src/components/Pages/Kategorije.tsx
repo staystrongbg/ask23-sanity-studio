@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { CategoryCard, CategoryTitle, CategoryImgContainer } from '../utils';
-
 const Kategorije = () => {
   const categoryData = [
     {
