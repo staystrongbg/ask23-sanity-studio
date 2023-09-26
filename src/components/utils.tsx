@@ -22,7 +22,7 @@ export const CategoryCard = ({ children, className }: ComponentProps) => {
 export const CategoryTitle = ({ className, children }: ComponentProps) => {
   return (
     <h3
-      className={`${className} xl:text-4xl break-all text-2xl tracking-normal ${rubik.className} uppercase head`}
+      className={`${className} xl:text-4xl break-all text-2xl tracking-normal ${rubik.className} uppercase`}
     >
       {children}
     </h3>
