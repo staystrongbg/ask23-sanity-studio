@@ -27,9 +27,10 @@ export const Search = () => {
   //TODO: fix this
   const handleSearch = (e: any) => {
     e.preventDefault();
-    setSearchTerm(e.target[0].value);
-    e.target[0].value = '';
-    router.replace('/');
+    if (e.target[0].value) setSearchTerm(e.target[0].value);
+
+    // e.target[0].value = '';
+    // router.replace('/');
   };
 
   const kbEvents = () => {
@@ -63,12 +64,13 @@ export const Search = () => {
       const res = await getProducts({
         query: ALL_PRODUCTS_QUERY,
       });
+      console.log('res', res);
       setProducts(res);
     };
 
     fetchProducts();
   }, [isSearching]);
-
+  console.log('isSearching', isSearching);
   return (
     <div
       className=" flex items-center gap-2 bg-transparent rounded-md cursor-pointer z-50"
