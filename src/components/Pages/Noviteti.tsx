@@ -13,7 +13,6 @@ const Noviteti = ({ products }: { products: Omit<Product, 'kolicina'>[] }) => {
   const [slajderProizvodi, setSlajderProizvodi] = useState({ tekst: '' });
 
   const handleCategory = (e = 'акција', idx = 1) => {
-    console.log('e', e);
     setIsActive(idx);
     setSlajderProizvodi(
       e === 'акција'

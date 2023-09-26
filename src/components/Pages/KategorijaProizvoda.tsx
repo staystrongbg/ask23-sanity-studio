@@ -23,7 +23,7 @@ const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
   // }, [url]);
 
   useEffect(() => {
-    setItems(page);
+    setItems(page ?? []);
   }, [page]);
 
   useEffect(() => {
