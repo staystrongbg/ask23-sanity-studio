@@ -17,30 +17,30 @@ const KategorijaProizvoda = ({ products }: { products: Product[] }) => {
     setPagination,
   } = useProductContext();
 
-  // const [page, setPage] = useState<Product[] | []>(products);
+  const [page, setPage] = useState<Product[] | []>(products);
   // useEffect(() => {
   //   setPage(products.filter((prod) => prod.link === url) as Product[]);
   // }, [url]);
 
   useEffect(() => {
-    setItems(products);
-  }, []);
+    setItems(page);
+  }, [page]);
 
-  // useEffect(() => {
-  //   setVrstaZivotinje(page ?? []);
-  // }, [page]);
+  useEffect(() => {
+    setVrstaZivotinje(page ?? []);
+  }, [page]);
   return (
     <>
-      {items ? (
+      {page ? (
         <>
           <div className={`wrapper w-full `}>
             <section className="sm:px-5 px-1  ">
               <div className="flex flex-col  w-full m-auto mt-12 mb-12">
-                <H1 className="text-center">{items[0].title}</H1>
+                <H1 className="text-center">{page[0].title}</H1>
                 <ProductsListWrapper>
                   <div className="sm:w-1/6 w-4/5 flex flex-col px-2">
                     <FilterSort />
-                    {items && <FilterTip numberOfProductsByType={items} />}
+                    {page && <FilterTip numberOfProductsByType={page} />}
                   </div>
                   <GridContainer>
                     {items &&

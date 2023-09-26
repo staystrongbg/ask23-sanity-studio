@@ -4,6 +4,7 @@ import { Product } from '@/@types';
 import ProductList from '@/components/Pages/ProductList';
 import Pagination from '@/components/Pagination';
 import { Metadata } from 'next';
+export const revalidate = 10;
 import { getProducts } from '../../../sanity/utils';
 import { ALL_PRODUCTS_QUERY } from '../../../sanity/groq-queries';
 

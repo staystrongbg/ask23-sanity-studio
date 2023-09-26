@@ -1,4 +1,5 @@
 // export const dynamic = 'force-static';
+export const revalidate = 10;
 import Paw from '@/components/Helpers/Paw';
 import { Brendovi, GoogleMap, Kategorije, Noviteti } from '@/components';
 import { getProducts } from '../../sanity/utils';

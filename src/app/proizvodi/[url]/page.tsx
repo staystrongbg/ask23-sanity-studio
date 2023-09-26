@@ -1,4 +1,5 @@
 // export const dynamic = 'force-static';
+export const revalidate = 10;
 import KategorijaProizvoda from '@/components/Pages/KategorijaProizvoda';
 import { Product } from '@/@types';
 import { Metadata } from 'next';

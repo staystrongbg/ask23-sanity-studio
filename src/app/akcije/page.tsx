@@ -1,4 +1,5 @@
 // export const dynamic = 'force-static';
+export const revalidate = 10;
 import ProductList from '@/components/Pages/ProductList';
 import { Product } from '@/@types';
 import Pagination from '@/components/Pagination';

@@ -13,6 +13,7 @@ const Noviteti = ({ products }: { products: Omit<Product, 'kolicina'>[] }) => {
   const [slajderProizvodi, setSlajderProizvodi] = useState({ tekst: '' });
 
   const handleCategory = (e = 'акција', idx = 1) => {
+    console.log('e', e);
     setIsActive(idx);
     setSlajderProizvodi(
       e === 'акција'
@@ -34,7 +35,7 @@ const Noviteti = ({ products }: { products: Omit<Product, 'kolicina'>[] }) => {
   //set diff initial render
   useEffect(() => {
     handleCategory();
-  }, [products]);
+  }, []);
 
   console.log('products', products);
   return (
