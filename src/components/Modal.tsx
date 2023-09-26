@@ -18,7 +18,7 @@ const Modal = () => {
         <FaTimes className="w-[24px] h-[24px] text-gray-400" />
       </span>
       <GridContainer>
-        {searchProducts &&
+        {searchProducts.length > 0 &&
           searchProducts.map((p, idx: number) => (
             <NonSwiperProizvod key={idx} p={p} />
           ))}

@@ -1,8 +1,8 @@
 'use client';
 import { FaTimes } from 'react-icons/fa';
 import { Modal } from '..';
-import { ChangeEvent, ChangeEventHandler, useEffect } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { ChangeEventHandler, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Product } from '@/@types';
 import { getProducts } from '../../../sanity/utils';
@@ -13,7 +13,6 @@ export const Search = () => {
   const {
     isSearching,
     setIsSearching,
-    searchProducts,
     setSearchProducts,
     searchTerm,
     setSearchTerm,
@@ -21,16 +20,12 @@ export const Search = () => {
 
   const [products, setProducts] = useState<Product[]>([]);
 
-  const router = useRouter();
   const pathname = usePathname();
 
   //TODO: fix this
   const handleSearch = (e: any) => {
     e.preventDefault();
     if (e.target[0].value) setSearchTerm(e.target[0].value);
-
-    // e.target[0].value = '';
-    // router.replace('/');
   };
 
   const kbEvents = () => {
@@ -38,6 +33,7 @@ export const Search = () => {
       e.key === 'Escape' && setSearchTerm('');
     });
   };
+
   useEffect(() => {
     kbEvents();
 
@@ -57,6 +53,8 @@ export const Search = () => {
   //reset state on page load
   useEffect(() => {
     setIsSearching(false);
+    setSearchProducts([]);
+    setSearchTerm('');
   }, [pathname]);
 
   useEffect(() => {
@@ -64,13 +62,12 @@ export const Search = () => {
       const res = await getProducts({
         query: ALL_PRODUCTS_QUERY,
       });
-      console.log('res', res);
       setProducts(res);
     };
 
     fetchProducts();
   }, [isSearching]);
-  console.log('isSearching', isSearching);
+
   return (
     <div
       className=" flex items-center gap-2 bg-transparent rounded-md cursor-pointer z-50"
