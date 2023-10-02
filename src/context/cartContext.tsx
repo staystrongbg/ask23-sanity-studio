@@ -1,12 +1,6 @@
 'use client';
 import { useRouter } from 'next/router';
-import {
-  createContext,
-  useEffect,
-  useState,
-  useContext,
-  SetStateAction,
-} from 'react';
+import { createContext, useState, useContext } from 'react';
 import products from '../../products.json';
 import { Product } from '../@types';
 
