@@ -1,7 +1,7 @@
 import { PortableTextBlock } from 'sanity';
 
 export type Product = {
-  id: string;
+  _id: string;
   tip: string;
   name: string;
   price: string;

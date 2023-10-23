@@ -33,7 +33,7 @@ const SwiperProizvod = ({
             <div className="w-full h-full p-2 bg-white">
               <Link
                 href="/proizvodi/[url]/[id]"
-                as={`/proizvodi/${proizvod.link}/${proizvod.id}`}
+                as={`/proizvodi/${proizvod.link}/${proizvod._id}`}
               >
                 <img
                   onClick={() => setSearchTerm('')}

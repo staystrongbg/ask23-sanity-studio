@@ -1,4 +1,3 @@
-//custom styled components! TEST TEST TEST :)
 //kategorija stilovi
 import { rubik } from '@/app/fonts';
 type ComponentProps = {

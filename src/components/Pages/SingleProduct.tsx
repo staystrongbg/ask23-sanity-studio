@@ -1,4 +1,5 @@
 'use client';
+
 import { useCartContext } from '@/context/cartContext';
 import { AkcijaBadge, Button2, MultipleSwipers } from '..';
 import { useProductContext } from '@/context/productContext';
@@ -20,7 +21,7 @@ function SingleProduct({ products }: { products: Product[] }) {
   useEffect(() => {
     setProduct(
       !similarProduct
-        ? (products.find((product) => product.id === id) as Product)
+        ? (products.find((product) => product._id === id) as Product)
         : null
     );
   }, [id]);

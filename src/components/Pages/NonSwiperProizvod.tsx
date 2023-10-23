@@ -22,7 +22,7 @@ const NonSwiperProizvod = ({ p }: { p: Product }) => {
             <div className="w-full h-full p-2 bg-white">
               <Link
                 href="/proizvodi/[url]/[id]"
-                as={`/proizvodi/${p.link}/${p.id}`}
+                as={`/proizvodi/${p.link}/${p._id}`}
               >
                 <img
                   onClick={() => setSearchTerm('')}
