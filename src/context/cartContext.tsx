@@ -43,7 +43,7 @@ export const CartContextProvider = ({
   const [cart, setCart] = useState(false);
   const removeItemFromCart = (id: string) => {
     proizvodiKorpa &&
-      setProizvodiKorpa(proizvodiKorpa.filter((item) => item.id !== id));
+      setProizvodiKorpa(proizvodiKorpa.filter((item) => item._id !== id));
     // localStorage.removeItem('korpa');
   };
 
@@ -69,7 +69,7 @@ export const CartContextProvider = ({
 
   function add(arr: Product[] | [], tempP: Product) {
     // function (return index if match / -1 if no match
-    let indexFound = arr.findIndex((element) => element.id === tempP.id);
+    let indexFound = arr.findIndex((element) => element._id === tempP._id);
 
     if (indexFound < 0) setProizvodiKorpa([...arr, tempP]);
     if (indexFound >= 0) {

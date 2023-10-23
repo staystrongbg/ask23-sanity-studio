@@ -25,7 +25,7 @@ const Cart = () => {
       {proizvodiKorpa &&
         proizvodiKorpa.map((item, idx) => {
           return (
-            <div key={item.id}>
+            <div key={item._id}>
               <div className="flex px-2 items-center justify-start ">
                 <span className="border flex items-center justify-center border-gray-300 p-1 ">
                   <Image
@@ -51,7 +51,7 @@ const Cart = () => {
                     <span>Kол. {item.kolicina}</span>
                     <span
                       className="text-gray-500 cursor-pointer tracking-wider uppercase"
-                      onClick={() => removeItemFromCart(item.id)}
+                      onClick={() => removeItemFromCart(item._id)}
                     >
                       <FaTrash />
                     </span>
@@ -134,7 +134,7 @@ const Cart = () => {
               {proizvodiKorpa.map((p) => {
                 return (
                   <>
-                    <tr key={p.id}>
+                    <tr key={p._id}>
                       <td className="border p-4 border-gray-600 ">{p.name}</td>
                       <td className="border p-4 border-gray-600 ">
                         {p.kolicina}
